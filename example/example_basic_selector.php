@@ -23,7 +23,7 @@ $html = file_get_html('https://hisnmuslim.com/i/en/1');
 //
 // find all span tags with class=gb1
 foreach($html->find('div.thikr') as $e)
-    echo $e->outertext . '<br>';
+    echo $e->outertext . '<br><br/><br/>';
 //
 //// find all td tags with attribite align=center
 //foreach($html->find('td[align=center]') as $e)
