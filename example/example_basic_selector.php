@@ -3,7 +3,7 @@
 include('../simple_html_dom.php');
  
 // get DOM from URL or file
-$html = file_get_html('https://hisnmuslim.com/i/sw/1');
+$html = file_get_html('https://hisnmuslim.com/i/en/1');
 //
 //// find all link
 //foreach($html->find('a') as $e) 
