@@ -20,7 +20,8 @@ foreach ($htmlEnglish->find('a.ctitle') as $e) {
 
 
 $dir = 'sqlite:C:\AndroidProjects\HisnulMuslim\app\src\main\assets\hisnMuslimDb.db';
-$databaseHandler = new PDO($dir) or die("Can not open database");
+$dirOffice = 'sqlite:C:\Myprojects\HisnulMuslim\app\src\main\assets\hisnMuslimDb.db';
+$databaseHandler = new PDO($dirOffice) or die("Can not open database");
 // Get entire data and insert into the database
 for ($i = 0; $i < count($arrayArabic); $i++) {
     echo $hadeethArabic =     SQLite3::escapeString(trim($arrayArabic[$i]));
@@ -30,9 +31,13 @@ for ($i = 0; $i < count($arrayArabic); $i++) {
     echo '----------------------------';
     echo '<br/><br/>';
 
-    $query = "INSERT INTO hadeeth_category('id','name_arabic','name_swahili','name_english') VALUES (NULL,'$hadeethArabic','$hadeethSwahili','$hadeethEnglish');";
-//
-    $databaseHandler->exec($query);
+//    $query = "INSERT INTO hadeeth_category('id','name_arabic','name_swahili','name_english') VALUES (NULL,'$hadeethArabic','$hadeethSwahili','$hadeethEnglish');";
+//    $databaseHandler->exec($query);
+    var_dump($arrayArabic);
+    unset($arrayArabic);
+    echo '<br/><br/>';
+    var_dump($arrayArabic);
+    exit;
     //die(print_r($databaseHandler->errorInfo(), true));
 }
 
